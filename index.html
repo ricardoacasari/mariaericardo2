@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casamento Maria e Ricardo | 21.10.2028</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        html { scroll-behavior: smooth; } /* Rolagem Suave */
+        .font-fancy { font-family: 'Great Vibes', cursive; }
+        .font-main { font-family: 'Montserrat', sans-serif; }
+        .bg-overlay { 
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+            url('https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'); 
+        }
+        .nav-link { @apply text-stone-600 hover:text-amber-800 transition-colors duration-300 text-xs uppercase tracking-widest font-semibold; }
+    </style>
+</head>
+<body class="bg-stone-50 font-main text-stone-800 pt-16 md:pt-20">
+
+    <nav class="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md z-50 border-b border-stone-100 shadow-sm">
+        <div class="max-w-6xl mx-auto px-6 h-16 md:h-20 flex items-center justify-between">
+            <a href="#home" class="font-fancy text-2xl text-amber-900">M & R</a>
+            
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="text-stone-600 hover:text-amber-800 text-xs uppercase tracking-widest font-semibold">Início</a>
+                <a href="#contagem" class="text-stone-600 hover:text-amber-800 text-xs uppercase tracking-widest font-semibold">O Grande Dia</a>
+                <a href="#presentes" class="text-stone-600 hover:text-amber-800 text-xs uppercase tracking-widest font-semibold">Lista de Presentes</a>
+            </div>
+
+            <div class="md:hidden flex space-x-4">
+                <a href="#presentes" class="bg-amber-800 text-white px-4 py-2 rounded-full text-[10px] uppercase font-bold">Presentear</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="h-[90vh] flex flex-col items-center justify-center text-center bg-overlay bg-cover bg-center px-4 rounded-b-[50px] md:rounded-b-[100px] mx-2">
+        <div class="p-6 md:p-10">
+            <h1 class="text-white text-6xl md:text-9xl font-fancy mb-6">Maria e Ricardo</h1>
+            <p class="text-white text-lg md:text-2xl tracking-[0.3em] uppercase font-light">21 de Outubro de 2028</p>
+        </div>
+    </section>
+
+    <section id="contagem" class="bg-white py-24 scroll-mt-20">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-sm uppercase tracking-[0.4em] text-stone-400 mb-10 font-semibold italic">Contagem Regressiva</h2>
+            <div class="grid grid-cols-4 gap-2 md:gap-8">
+                <div class="bg-stone-50 p-6 md:p-8 rounded-3xl border border-stone-100 shadow-sm">
+                    <span id="days" class="block text-3xl md:text-6xl font-bold text-stone-700">00</span>
+                    <span class="text-[10px] uppercase tracking-widest text-stone-400 mt-2 block">Dias</span>
+                </div>
+                <div class="bg-stone-50 p-6 md:p-8 rounded-3xl border border-stone-100 shadow-sm">
+                    <span id="hours" class="block text-3xl md:text-6xl font-bold text-stone-700">00</span>
+                    <span class="text-[10px] uppercase tracking-widest text-stone-400 mt-2 block">Horas</span>
+                </div>
+                <div class="bg-stone-50 p-6 md:p-8 rounded-3xl border border-stone-100 shadow-sm">
+                    <span id="minutes" class="block text-3xl md:text-6xl font-bold text-stone-700">00</span>
+                    <span class="text-[10px] uppercase tracking-widest text-stone-400 mt-2 block">Min</span>
+                </div>
+                <div class="bg-stone-50 p-6 md:p-8 rounded-3xl border border-stone-100 shadow-sm">
+                    <span id="seconds" class="block text-3xl md:text-6xl font-bold text-stone-700">00</span>
+                    <span class="text-[10px] uppercase tracking-widest text-stone-400 mt-2 block">Seg</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="presentes" class="max-w-6xl mx-auto py-24 px-6 scroll-mt-20">
+        <div class="text-center mb-16">
+            <h2 class="text-6xl font-fancy text-amber-800 mb-6">Lista de Presentes</h2>
+            <p class="text-stone-500 max-w-xl mx-auto">Escolha uma cota de presente e gere seu PIX personalizado abaixo.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div class="bg-white p-10 rounded-[40px] shadow-sm border border-stone-100 text-center hover:shadow-xl transition-all duration-300">
+                <div class="text-6xl mb-6">🍷</div>
+                <h3 class="font-semibold text-xl mb-3">Jantar Romântico</h3>
+                <div class="text-emerald-600 font-bold text-3xl mb-8">R$ 150,00</div>
+                <button onclick="gerarPix(150.00, 'Jantar Romantico')" class="w-full bg-stone-800 text-white py-4 rounded-2xl font-bold uppercase text-xs tracking-widest">Presentear</button>
+            </div>
+
+            <div class="bg-white p-10 rounded-[40px] shadow-sm border border-stone-100 text-center hover:shadow-xl transition-all duration-300 transform md:-translate-y-6">
+                <div class="text-6xl mb-6">✈️</div>
+                <h3 class="font-semibold text-xl mb-3 text-amber-900 font-fancy text-2xl">Cota Lua de Mel</h3>
+                <div class="text-emerald-600 font-bold text-3xl mb-8">R$ 300,00</div>
+                <button onclick="gerarPix(300.00, 'Lua de Mel')" class="w-full bg-amber-700 text-white py-4 rounded-2xl font-bold shadow-lg shadow-amber-100 uppercase text-xs tracking-widest">Presentear</button>
+            </div>
+
+            <div class="bg-white p-10 rounded-[40px] shadow-sm border border-stone-100 text-center hover:shadow-xl transition-all duration-300">
+                <div class="text-6xl mb-6">🏡</div>
+                <h3 class="font-semibold text-xl mb-3">Nosso Lar</h3>
+                <div class="text-emerald-600 font-bold text-3xl mb-8 italic">Valor Livre</div>
+                <button onclick="gerarPix(0, 'Presente de Casamento')" class="w-full bg-stone-800 text-white py-4 rounded-2xl font-bold uppercase text-xs tracking-widest">Presentear</button>
+            </div>
+        </div>
+    </section>
+
+    <div id="pixModal" class="hidden fixed inset-0 bg-stone-900/90 flex items-center justify-center p-4 z-[100] backdrop-blur-md">
+        <div class="bg-white p-8 rounded-[40px] max-w-sm w-full text-center">
+            <h3 id="modalTitle" class="text-2xl font-fancy text-stone-800 mb-2"></h3>
+            <p id="modalValue" class="text-emerald-600 font-bold mb-6"></p>
+            <div class="bg-stone-50 p-4 rounded-3xl mb-6 border border-stone-100 flex justify-center">
+                <img id="qrcodeImg" src="" alt="QR Code PIX" class="w-48 h-48">
+            </div>
+            <textarea id="pixPayload" readonly class="w-full text-[10px] bg-stone-100 p-3 rounded-lg border-none mb-6 h-20 break-all"></textarea>
+            <button onclick="closePix()" class="w-full bg-stone-800 text-white py-4 rounded-2xl font-bold uppercase text-xs">Fechar</button>
+        </div>
+    </div>
+
+    <script>
+        const CHAVE_PIX = "example@gmail.com";
+        const NOME_RECEBEDOR = "MARIA E RICARDO";
+        const CIDADE_RECEBEDOR = "SOROCABA";
+
+        function gerarPix(valor, titulo) {
+            const valorFormatado = valor > 0 ? valor.toFixed(2) : "";
+            let payload = `00020101021126450014br.gov.bcb.pix0123${CHAVE_PIX}520400005303986`;
+            if(valor > 0) payload += `54${valorFormatado.length.toString().padStart(2, '0')}${valorFormatado}`;
+            payload += `5802BR59${NOME_RECEBEDOR.length.toString().padStart(2, '0')}${NOME_RECEBEDOR}60${CIDADE_RECEBEDOR.length.toString().padStart(2, '0')}${CIDADE_RECEBEDOR}62070503***6304`;
+            const crc = calcularCRC16(payload);
+            const fullPayload = payload + crc;
+
+            document.getElementById('modalTitle').innerText = titulo;
+            document.getElementById('modalValue').innerText = valor > 0 ? `R$ ${valorFormatado}` : "Valor Livre";
+            document.getElementById('pixPayload').value = fullPayload;
+            document.getElementById('qrcodeImg').src = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(fullPayload)}`;
+            document.getElementById('pixModal').classList.remove('hidden');
+        }
+
+        function calcularCRC16(str) {
+            let crc = 0xFFFF;
+            for (let i = 0; i < str.length; i++) {
+                crc ^= str.charCodeAt(i) << 8;
+                for (let j = 0; j < 8; j++) {
+                    if ((crc & 0x8000) !== 0) crc = (crc << 1) ^ 0x1021;
+                    else crc <<= 1;
+                }
+            }
+            return (crc & 0xFFFF).toString(16).toUpperCase().padStart(4, '0');
+        }
+
+        function closePix() { document.getElementById('pixModal').classList.add('hidden'); }
+
+        const weddingDate = new Date("Oct 21, 2028 16:00:00").getTime();
+        setInterval(function() {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+            document.getElementById("days").innerText = Math.floor(distance / (1000 * 60 * 60 * 24)).toString().padStart(2, '0');
+            document.getElementById("hours").innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
+            document.getElementById("minutes").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
+            document.getElementById("seconds").innerText = Math.floor((distance % (1000 * 60)) / 1000).toString().padStart(2, '0');
+        }, 1000);
+    </script>
+</body>
+</html>
